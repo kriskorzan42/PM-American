@@ -26,6 +26,32 @@ An interactive web application that teaches program management principles and do
 
 No special setup required. This is a static website that can be hosted on any web server.
 
-## GitHub Pages
+## GitHub Pages Hosting Instructions
 
-This website is hosted using GitHub Pages and can be accessed at [YOUR-USERNAME.github.io/program-quiz](https://YOUR-USERNAME.github.io/program-quiz). 
+To host this website on GitHub Pages:
+
+1. **Create a GitHub Repository**:
+   - Go to [GitHub](https://github.com/) and sign in
+   - Click the "+" icon in the top right and choose "New repository"
+   - Name it "program-quiz" (or any name you prefer)
+   - Make it Public
+   - Don't initialize with README (since we already have files)
+   - Click "Create repository"
+
+2. **Push your code to GitHub**:
+   ```bash
+   # Replace YOUR-USERNAME with your actual GitHub username
+   git remote add origin https://github.com/YOUR-USERNAME/program-quiz.git
+   git push -u origin main
+   ```
+
+3. **Enable GitHub Pages**:
+   - Go to your repository on GitHub
+   - Click "Settings" tab
+   - Scroll down to "Pages" section in the left sidebar
+   - Under "Source", select "Deploy from a branch"
+   - Select "main" branch and "/ (root)" folder
+   - Click "Save"
+   - Wait a few minutes for your site to be published
+
+4. Your site will be available at: `https://YOUR-USERNAME.github.io/program-quiz/` 
