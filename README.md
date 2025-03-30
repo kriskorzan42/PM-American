@@ -26,32 +26,15 @@ An interactive web application that teaches program management principles and do
 
 No special setup required. This is a static website that can be hosted on any web server.
 
-## GitHub Pages Hosting Instructions
+## GitHub Pages
 
-To host this website on GitHub Pages:
+This website is hosted using GitHub Pages and can be accessed at [kriskorzan42.github.io/PM-American](https://kriskorzan42.github.io/PM-American)
 
-1. **Create a GitHub Repository**:
-   - Go to [GitHub](https://github.com/) and sign in
-   - Click the "+" icon in the top right and choose "New repository"
-   - Name it "program-quiz" (or any name you prefer)
-   - Make it Public
-   - Don't initialize with README (since we already have files)
-   - Click "Create repository"
-
-2. **Push your code to GitHub**:
-   ```bash
-   # Replace YOUR-USERNAME with your actual GitHub username
-   git remote add origin https://github.com/YOUR-USERNAME/program-quiz.git
-   git push -u origin main
-   ```
-
-3. **Enable GitHub Pages**:
-   - Go to your repository on GitHub
-   - Click "Settings" tab
-   - Scroll down to "Pages" section in the left sidebar
-   - Under "Source", select "Deploy from a branch"
-   - Select "main" branch and "/ (root)" folder
-   - Click "Save"
-   - Wait a few minutes for your site to be published
-
-4. Your site will be available at: `https://YOUR-USERNAME.github.io/program-quiz/` 
+To enable GitHub Pages for this repository:
+1. Go to the repository on GitHub
+2. Click "Settings" tab
+3. Scroll down to "Pages" section in the left sidebar
+4. Under "Source", select "Deploy from a branch"
+5. Select "main" branch and "/ (root)" folder
+6. Click "Save"
+7. Wait a few minutes for your site to be published 
