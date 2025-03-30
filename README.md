@@ -12,6 +12,7 @@ An interactive web application that teaches program management principles and do
 ## Pages
 
 - Home: Landing page with program introduction
+- Quiz: Program Life Cycle Quiz with interactive table
 - Principles: Interactive diagram showing the five domains and their relationships
 - Benefits: Information about program management benefits
 
