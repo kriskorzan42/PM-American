@@ -1,0 +1,662 @@
+:root {
+    --american-red: #BF0A30;
+    --american-blue: #002868;
+    --domain-purple: #4D3B84;
+    --navy-blue: #002868;
+    --light-blue-bg: #E6F2F9;
+}
+
+/* Interwoven Circles */
+.interwoven-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Center Circle */
+.domain-circle.center {
+    position: absolute;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background-color: var(--primary-blue);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    border: 2px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    font-weight: 600;
+    line-height: 1.2;
+    font-size: 16px;
+}
+
+/* Oval Circles */
+.domain-oval {
+    position: absolute;
+    width: 150px;
+    height: 210px;
+    border-radius: 100px;
+    background-color: var(--primary-blue);
+    border: 2px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.domain-oval span {
+    transform: rotate(0deg);
+    max-width: 80%;
+    font-size: 16px;
+}
+
+.domain-oval.top {
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -30%) rotate(90deg);
+    z-index: 1;
+}
+
+.domain-oval.top span {
+    transform: rotate(-90deg);
+}
+
+.domain-oval.right {
+    top: 50%;
+    right: 20%;
+    transform: translate(30%, -50%);
+    z-index: 2;
+}
+
+.domain-oval.bottom {
+    bottom: 20%;
+    left: 50%;
+    transform: translate(-50%, 30%) rotate(90deg);
+    z-index: 3;
+}
+
+.domain-oval.bottom span {
+    transform: rotate(-90deg);
+}
+
+.domain-oval.left {
+    top: 50%;
+    left: 20%;
+    transform: translate(-30%, -50%);
+    z-index: 4;
+}
+
+/* Collaboration text */
+.collaboration-text {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: 700;
+    color: white;
+    font-size: 1.4rem;
+    display: block;
+    z-index: 6;
+    border-radius: 20px;
+}
+
+.collaboration-text::before {
+    content: "?";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--american-red);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    transition: all 0.3s ease;
+    border-radius: 20px;
+    z-index: 1;
+}
+
+.collaboration-text.revealed::before {
+    display: none;
+}
+
+.collaboration-text-content {
+    position: relative;
+    z-index: 0;
+    background-color: var(--navy-blue);
+    padding: 6px 15px;
+    border-radius: 20px;
+    border: 2px solid white;
+    color: white;
+}
+
+/* Hide figure caption */
+.figure-caption {
+    display: none;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .domain-circle.center {
+        width: 120px;
+        height: 120px;
+        font-size: 14px;
+    }
+    
+    .domain-oval {
+        width: 100px;
+        height: 140px;
+    }
+    
+    .domain-oval span {
+        font-size: 14px;
+    }
+    
+    .collaboration-text {
+        font-size: 16px;
+        bottom: 8%;
+    }
+    
+    .arrow {
+        width: 50px;
+        height: 12px;
+    }
+    
+    .arrow.top {
+        top: 65px;
+    }
+    
+    .arrow.right {
+        right: 65px;
+    }
+    
+    .arrow.bottom {
+        bottom: 65px;
+    }
+    
+    .arrow.left {
+        left: 65px;
+    }
+    
+    .guide-behavior-arrow {
+        width: 80%;
+    }
+}
+
+@media (max-width: 480px) {
+    .principles-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(8, 1fr);
+    }
+    
+    .outer-circle {
+        width: 330px;
+        height: 330px;
+    }
+    
+    .domain-center {
+        width: 100px;
+        height: 100px;
+        font-size: 14px;
+    }
+    
+    .domain-area.top, .domain-area.bottom {
+        width: 160px;
+        height: 100px;
+        border-radius: 50px;
+    }
+    
+    .domain-area.right, .domain-area.left {
+        width: 110px;
+        height: 160px;
+        border-radius: 55px;
+    }
+    
+    .domain-center .hidden-item,
+    .domain-area .hidden-item {
+        font-size: 0.85rem;
+        line-height: 1.2;
+    }
+    
+    .arrow {
+        width: 40px;
+        height: 10px;
+    }
+    
+    .arrow.top {
+        top: 45px;
+    }
+    
+    .arrow.right {
+        right: 45px;
+    }
+    
+    .arrow.bottom {
+        bottom: 45px;
+    }
+    
+    .arrow.left {
+        left: 45px;
+    }
+}
+
+/* Media queries for responsive oval sizes */
+@media (max-width: 768px) {
+    .principles-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+    }
+    
+    .outer-circle {
+        width: 450px;
+        height: 450px;
+    }
+    
+    .domain-center {
+        width: 140px;
+        height: 140px;
+        font-size: 16px;
+    }
+    
+    .domain-area.top, .domain-area.bottom {
+        width: 230px;
+        height: 130px;
+        border-radius: 65px;
+    }
+    
+    .domain-area.right, .domain-area.left {
+        width: 140px;
+        height: 230px;
+        border-radius: 70px;
+    }
+    
+    .domain-center .hidden-item,
+    .domain-area .hidden-item {
+        font-size: 0.95rem;
+    }
+    
+    .guide-behavior-arrow {
+        width: 80%;
+    }
+}
+
+@media (max-width: 480px) {
+    .principles-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(8, 1fr);
+    }
+    
+    .outer-circle {
+        width: 330px;
+        height: 330px;
+    }
+    
+    .domain-center {
+        width: 100px;
+        height: 100px;
+        font-size: 14px;
+    }
+    
+    .domain-area.top, .domain-area.bottom {
+        width: 160px;
+        height: 100px;
+        border-radius: 50px;
+    }
+    
+    .domain-area.right, .domain-area.left {
+        width: 110px;
+        height: 160px;
+        border-radius: 55px;
+    }
+    
+    .domain-center .hidden-item,
+    .domain-area .hidden-item {
+        font-size: 0.85rem;
+        line-height: 1.2;
+    }
+}
+
+/* Hidden Items */
+.domain-center .hidden-item,
+.domain-area .hidden-item {
+    color: white;
+    font-size: 0.95rem;
+    font-weight: 500;
+    max-width: 90%;
+    line-height: 1.4;
+    padding: 10px;
+}
+
+/* Custom styling for Benefits Management text */
+.domain-area.right .hidden-item {
+    padding-left: 15px;
+    padding-right: 15px;
+    max-width: 95%;
+    margin-left: 25px;
+    text-align: left;
+    position: relative;
+    right: -5px;
+}
+
+/* Principles Quiz Specific Styles */
+.principles-diagram {
+    width: 100%;
+    margin: 30px 0;
+    padding: 20px;
+    border: 2px solid var(--navy-blue);
+    border-radius: 10px;
+    background-color: white;
+    position: relative;
+    box-sizing: border-box;
+}
+
+/* Section Headers */
+.section-header {
+    background-color: var(--navy-blue);
+    color: white;
+    padding: 15px;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.section-header h2 {
+    margin: 0;
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+
+/* Principles Grid */
+.principles-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.principle-cell {
+    background-color: #e6f5ff;
+    border: 1px solid #c0e0f5;
+    border-radius: 6px;
+    padding: 20px 15px;
+    text-align: center;
+    position: relative;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.principle-cell::before {
+    content: "?";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f0f7ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--navy-blue);
+    transition: all 0.3s ease;
+    border-radius: 6px;
+    z-index: 1;
+}
+
+.principle-cell.revealed::before {
+    display: none;
+}
+
+/* Guide Behavior Arrow */
+.guide-behavior-arrow {
+    position: relative;
+    height: 40px;
+    margin: 25px auto;
+    padding: 0 20px;
+    background-color: var(--american-red);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    width: 220px;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+.guide-behavior-arrow:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid var(--american-red);
+}
+
+.arrow-text {
+    font-size: 1.1rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Domains Diagram */
+.domains-diagram {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0;
+    position: relative;
+}
+
+.outer-circle {
+    position: relative;
+    width: 550px;
+    height: 550px;
+    border-radius: 50%;
+    border: 2px solid var(--domain-purple);
+    background-color: var(--light-blue-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Interwoven Diagram */
+.interwoven-diagram {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Center domain - Life Cycle Management */
+.domain-center {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background-color: var(--navy-blue);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    font-weight: 600;
+    line-height: 1.3;
+    font-size: 16px;
+    border: 2px solid white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.domain-center::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.0);
+    border-radius: 50%;
+    z-index: 1;
+    display: none;
+}
+
+.domain-center .hidden-item {
+    z-index: 2;
+    position: relative;
+}
+
+.domain-center:not(.revealed) .hidden-item {
+    visibility: hidden;
+}
+
+.domain-center:not(.revealed)::before {
+    content: "?";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Domain Areas - Changed to ovals */
+.domain-area {
+    position: absolute;
+    background-color: var(--navy-blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    line-height: 1.3;
+    border: 2px solid white;
+    z-index: 2;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.domain-area::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.0);
+    border-radius: inherit;
+    z-index: 1;
+    display: none;
+}
+
+.domain-area .hidden-item {
+    z-index: 2;
+    position: relative;
+}
+
+.domain-area:not(.revealed) .hidden-item {
+    visibility: hidden;
+}
+
+.domain-area:not(.revealed)::before {
+    content: "?";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Top domain - Strategic Alignment - Horizontal oval */
+.domain-area.top {
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 280px;
+    height: 160px;
+    border-radius: 80px;
+}
+
+/* Right domain - Benefits Management - Vertical oval */
+.domain-area.right {
+    top: 50%;
+    right: 23%;
+    transform: translate(40%, -50%);
+    width: 170px;
+    height: 280px;
+    border-radius: 85px;
+}
+
+/* Bottom domain - Stakeholder Engagement - Horizontal oval */
+.domain-area.bottom {
+    bottom: 25%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    width: 280px;
+    height: 160px;
+    border-radius: 80px;
+}
+
+/* Left domain - Governance Framework - Vertical oval */
+.domain-area.left {
+    top: 50%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    width: 160px;
+    height: 280px;
+    border-radius: 80px;
+}
+
+/* New curved arrows */
+.arrow {
+    display: none; /* Hide the old arrow style */
+}
+
+/* Create curved arrows using SVG-like curved shapes */
+.curved-arrow {
+    display: none; /* Hide all curved arrows */
+}
+
+/* Media queries for responsive curved arrows */
+@media (max-width: 768px) {
+    .curved-arrow {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .curved-arrow {
+        display: none;
+    }
+} 

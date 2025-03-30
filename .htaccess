@@ -1,0 +1,6 @@
+# Redirect root to home.html
+DirectoryIndex home.html
+
+# Redirect from index to home if accessed directly
+RewriteEngine On
+RewriteRule ^$ home.html [L] 

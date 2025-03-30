@@ -1,0 +1,444 @@
+/* Benefits Diagram Specific Styles */
+.benefits-diagram {
+    width: 100%;
+    margin: 30px 0;
+    padding: 20px;
+    border: 2px solid var(--navy-blue);
+    border-radius: 10px;
+    background-color: white;
+    position: relative;
+    box-sizing: border-box;
+}
+
+/* Navigation styling */
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.nav-link {
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--navy-blue);
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link:hover {
+    background-color: #153870;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.nav-link i {
+    margin-right: 8px;
+}
+
+/* Program Life Cycle Phases */
+.lifecycle-row {
+    display: flex;
+    margin-bottom: 30px;
+    padding: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.lifecycle-phase {
+    flex: 1 1 0%;
+    text-align: center;
+    color: var(--navy-blue);
+    font-weight: 600;
+    position: relative;
+    cursor: pointer;
+    padding: 15px;
+    background-color: #e8e4f3;
+    border: 1px solid #d8d4e3;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+/* Spacing between lifecycle phases */
+.lifecycle-phase + .lifecycle-phase {
+    margin-left: 16px;
+}
+
+.lifecycle-phase::before {
+    content: "?";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f0f7ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--navy-blue);
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    z-index: 1;
+}
+
+.lifecycle-phase.revealed::before {
+    display: none;
+}
+
+.subphases {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.subphase {
+    flex: 1;
+    padding: 8px 5px;
+    background-color: #d8d4e3;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin: 0 3px;
+}
+
+/* Benefits Management Arrow */
+.benefits-arrow {
+    position: relative;
+    height: 50px;
+    margin: 25px 0;
+    padding: 0 20px;
+    background-color: var(--navy-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.benefits-arrow:before,
+.benefits-arrow:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 0;
+    border-style: solid;
+}
+
+/* Left arrow tip */
+.benefits-arrow:before {
+    left: -20px;
+    border-width: 25px 20px 25px 0;
+    border-color: transparent var(--navy-blue) transparent transparent;
+}
+
+/* Right arrow tip */
+.benefits-arrow:after {
+    right: -20px;
+    border-width: 25px 0 25px 20px;
+    border-color: transparent transparent transparent var(--navy-blue);
+}
+
+.arrow-text {
+    font-size: 1.1rem;
+}
+
+/* Benefits Phases */
+.benefits-phases {
+    display: flex;
+    margin-top: 30px;
+    position: relative;
+    padding: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Equal width for all benefit phase boxes */
+.benefit-phase {
+    position: relative;
+    min-height: 220px;
+    padding: 15px;
+    background-color: #e0f0fa;
+    border: 1px solid #c0e0f5;
+    color: var(--navy-blue);
+    font-weight: 500;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    flex: 1 1 0%;
+    border-radius: 8px;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+/* Add equal spacing between benefit phases */
+.benefit-phase + .benefit-phase {
+    margin-left: 16px;
+}
+
+/* Remove redundant margin */
+.benefit-phase:last-child {
+    margin-right: 0;
+}
+
+/* Adjust first and last box titles to match others */
+.benefit-phase:nth-child(1) .phase-title,
+.benefit-phase:nth-child(5) .phase-title {
+    font-size: 0.85rem;
+    padding: 6px 4px;
+    height: auto;
+    min-height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Ensure all box content has equal sizing */
+.benefit-phase .phase-details li {
+    margin-bottom: 8px;
+    position: relative;
+    padding: 5px 15px 5px 25px;
+    text-align: left;
+    line-height: 1.4;
+    background-color: #e0f0fa;
+    border-radius: 4px;
+    box-sizing: border-box;
+    min-height: 32px;
+    display: flex;
+    align-items: center;
+}
+
+/* Adjust list items in the second column */
+.benefit-phase:nth-child(2) .phase-details li {
+    font-size: 0.75rem;
+}
+
+.phase-details li::before {
+    content: "?";
+    color: var(--navy-blue);
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-weight: bold;
+}
+
+.benefit-phase::before {
+    content: "?";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f0f7ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--navy-blue);
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    z-index: 1;
+}
+
+.benefit-phase.revealed::before {
+    display: none;
+}
+
+/* Additional styling for phase elements to accommodate hidden items */
+.phase-title {
+    position: relative;
+    padding: 8px;
+    margin-bottom: 15px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--navy-blue);
+    background-color: #e8e4f3;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.phase-details {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    font-size: 0.8rem;
+    line-height: 1.4;
+}
+
+/* Figure Caption */
+.figure-caption {
+    text-align: center;
+    margin-top: 15px;
+    font-style: italic;
+    color: #555;
+    font-size: 0.9rem;
+}
+
+/* For empty cells */
+.content:empty::before {
+    content: "–";
+    color: #ccc;
+    background-color: #fafafa;
+}
+
+/* Adding visual connection between Program Delivery and Benefits Delivery */
+.delivery-phase {
+    position: relative;
+    border: 2px solid #a41e22;
+}
+
+.delivery-connection {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    width: 2px;
+    height: 20px;
+    background-color: #a41e22;
+    z-index: 1;
+}
+
+/* Optional marker dot in the middle of the connection */
+.delivery-connection::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 6px;
+    height: 6px;
+    background-color: #a41e22;
+    border-radius: 50%;
+}
+
+/* Hidden item and reveal styles */
+.hidden-item {
+    position: relative;
+}
+
+/* --- START: Uncommented to re-enable hiding ---
+*/
+.hidden-item::before {
+    content: "?";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f0f7ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--navy-blue);
+    transition: all 0.3s ease;
+    border-radius: 4px;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.hidden-item.revealed::before {
+    opacity: 0;
+    visibility: hidden;
+}
+/*
+--- END: Uncommented to re-enable hiding --- */
+
+/* Size adjustments for different hidden elements */
+/* These are likely okay to leave, but depend on the ::before element */
+/*
+.phase-title.hidden-item::before {
+    font-size: 18px;
+}
+
+li.hidden-item::before {
+    font-size: 14px;
+}
+*/
+
+/* Enable the question mark overlay on the entire box with solid background */
+/* --- START: Commented out to remove hiding ---  << Keep this commented out
+.lifecycle-phase::before, .benefit-phase::before {
+    display: flex;
+    background-color: rgba(240, 247, 255, 0.9); /* Semi-transparent background * /
+}
+--- END: Commented out to remove hiding --- */
+
+/* Control Panel and Reset Button */
+.control-panel {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.control-btn {
+    background-color: var(--american-red);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.control-btn:hover {
+    background-color: #871a1d;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.control-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Override general .content::before rule from styles.css within the benefits diagram */
+.benefits-diagram .content::before {
+    display: none !important; /* Prevent the overlay from styles.css from appearing here */
+}
+
+/* Adjust "Benefits Analysis and Planning" title and content */
+.benefit-phase:nth-child(2) .phase-title {
+    font-size: 0.8rem;
+    padding: 6px 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    min-height: 35px;
+    line-height: 1.2;
+}
+
+/* Set font size for the items in the second benefit phase */
+.benefit-phase:nth-child(2) .phase-details li {
+    font-size: 0.75rem;
+}
+
+/* Remove redundant media query that affects padding */
+@media (min-width: 768px) {
+    /* Ensure both rows have the same spacing */
+    .lifecycle-phase + .lifecycle-phase {
+        margin-left: 16px;
+    }
+    
+    .benefit-phase + .benefit-phase {
+        margin-left: 16px;
+    }
+} 
